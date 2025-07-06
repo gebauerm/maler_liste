@@ -13,17 +13,15 @@
 ### Details
 
 
-__Datum:__ 22.06.2025
+Die __geplante Fertigstellung war der 01.06.__, dieser Termin konnte von der Werksfirma nicht eingehalten werden, sodass eine Abnahme erst am 13.06. möglich wurde. Zu diesem Termin waren die Arbeiten in der Wohnung immernoch nicht abgeschlossen, daher erfolgte auch hier keine Abnahme. Der Einzug in die Wohnung erfolgte am 20.06., allerdings ohne Abnahme, da die Wohnung auch hier noch nicht fertig war. Am 19.06. und 20.06. wurden erste Mängel bemerkt und protokolliert. Das Auftauchen dieser Mängel durch den Umzug, ist daher ausgeschlossen.
 
-
-Die Mängel wurden am 20.06. vor dem Einzug in die Wohnung aufgenommen. Ein zweiter Teil wurde nach dem Einzug protokolliert, jedoch schon vorher bemerkt. Das Auftauchen dieser Mängel durch den Umzug, ist daher ausgeschlossen.
-Unterhalb des Bildes findet sich die Beschreibung des Problems, sowie das erwartete Ergebnis.
+Aktuell wird die Wohnung seit dem 20.06. bewohnt.
 
 ### Bemerkung zu den Böden
 
 Die Arbeit an den Böden wurde auf Anfrage der Eigentümer gestoppt.
 In Schlafzimmer und Arbeitszimmer galten die Arbeiten als abgeschlossen, jedoch ist der Schliff hier weiterhin sehr rau und es zeigen sich Farbrückstände der vorherigen Schichten.
-Im Flur sind die Böden ebenfalls rau geschliffen, allerdings ohne Lackierung, da diese zum Afutragsstopp nicht abgeschlossen war.
+Im Flur sind die Böden ebenfalls rau geschliffen, allerdings ohne Lackierung, da diese zum Autragsstopp nicht abgeschlossen war.
 Das Wohnzimmer wurde noch nicht bearbeitet.
 
 <div id='Flur' />
@@ -38,11 +36,8 @@ __Problem__: Das Licht im Flur flackert manchmal nach dem Anschalten. Es bleibt 
 
 __Erwartung:__ Das Licht flakert beim Anschalten nicht mehr.
 
-<img src="./Arbeitszimmer/1b4805f4-841c-44ad-ae46-e495a4f5d8e7.jpeg" alt="drawing" width="400"/>
+__Update__: Das Problem wurde durch ein neues Relais gelöst.
 
-__Problem:__ Flecken an der Wand im Arbeitszimmer. Vermutlich von der Beize.
-
-__Erwartung:__ Keine Flecken an der Wand. Gern Farbe für die Eigentümer da lassen.
 
 <img src="./Flur/WhatsApp Image 2025-06-22 at 13.49.07.jpeg" alt="drawing" width="400" height="500"/>
 
@@ -130,6 +125,8 @@ __Problem:__ Fußleiste ist nicht vollständig gestrichen.
 
 __Erwartung:__ Fußleiste ist vollständig gestrichen. Allerdings steht hier bereits die Küche vor der Fußleiste, da wir am 20.06. in die Wohnung ziehen mussten.
 
+__Update:__ Kann nicht behoben wurden, da mit dem Einzug sich diese Stellen hinter der Küchenzeile befinden.
+
 <video width="320" height="240" controls>
   <source src="./Küche/WhatsApp Video 2025-06-20 at 11.34.43.mp4" type="video/mp4">
 </video>
@@ -138,13 +135,15 @@ __Problem:__ Unsaubere Stellen unterhalb der Fliesen. Die Wand scheint ist hier 
 
 __Erwartung:__ Saubere Wandstellen, an denen der Putz oder die Farbschichten gleichmäßig aufgetragen ist. Dieser Bereich ist bereits durch den Einzug durch eine Küchenzeile verdeckt.
 
+__Update:__ Wird zum Teil behoben werden, ein Teil ist jedoch ebenfalls durch die Küchenzeile verdeckt.
+
 <video width="320" height="240" controls>
   <source src="./Küche/WhatsApp Video 2025-06-20 at 11.39.04.mp4" type="video/mp4">
 </video>
 
-__Problem:__ Die Steckdosen funktionieren nicht. Sie wurden mehrfach durch die Wohnungseigentümer vertestet.
+__Problem:__ Die Steckdosen funktionieren nicht. Sie wurden mehrfach durch die Wohnungseigentümer vertestet. Die Behebung erfolgte durch den Eigentümer, eine Steckdose war nicht richtig angeklemmt.
 
-__Erwartung:__ Funktionierende Steckdosen. Die Behebung erfolgte durch den Eigentümer, eine Steckdose war nicht richtig angeklemmt.
+__Erwartung:__ Funktionierende Steckdosen.
 
 <img src="./Küche/WhatsApp Image 2025-06-22 at 13.03.15.jpeg" alt="drawing" width="400"/>
 
@@ -305,6 +304,12 @@ __Problem:__ Farbe findet sich in der Toilette. Die Toiellete ist hier schwer zu
 
 __Erwartung:__ Die Toilette findet sich so vor, wie wir sie vor den Arbeiten verlassen haben.
 
+__Strom__
+
+Im Badezimmer funktionierten 2 Steckdosen nicht richtig. Neben dem Vorbau an der linken Wand, gibt es insgesamt 3 Steckdosen. Eine im unteren Bereich und zwei im oberen, siehe Bild. Beim Nutzen der oberen Steckdosen und der unteren, schaltete sich der Strom für die Steckdosen komplett ab. Eine Nutzung wie auf dem Bild gezeigt, war vor der Behebung am 21.06. nicht möglich.
+
+<img src="./Badezimmer groß/c5ef2c8a-7420-4bf7-862f-983b186c4199.jpeg" alt="drawing" width="400"/>
+
 <div id='Arbeitszimmer' />
 
 ## Arbeitszimmer
@@ -336,3 +341,26 @@ __Problem:__ Flecken an der Wand im Arbeitszimmer. Vermutlich von der Beize.
 __Erwartung:__ Keine Flecken an der Wand. Gern Farbe für die Eigentümer da lassen.
 
 
+<img src="./Arbeitszimmer/1b4805f4-841c-44ad-ae46-e495a4f5d8e7.jpeg" alt="drawing" width="400"/>
+
+__Problem:__ Flecken an der Wand im Arbeitszimmer. Vermutlich von der Beize.
+
+__Erwartung:__ Keine Flecken an der Wand. Gern Farbe für die Eigentümer da lassen.
+
+## Haarrisse in den Wänden
+
+In der 1. Juli Woche wurden Haar- und Setzrisse in den Wänden bemerkt. Betroffene Stellen:
+
+__Schlafzimmer__
+
+<img src="./Schlafzimmer/WhatsApp Image 2025-07-05 at 12.59.25.jpeg" alt="drawing" width="400"/>
+
+__Arbeitszimmer__
+
+<img src="./Arbeitszimmer/WhatsApp Image 2025-07-05 at 12.59.25 (1).jpeg" alt="drawing" width="400"/>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-07-05 at 12.59.25 (2).jpeg" alt="drawing" width="400"/>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-07-05 at 12.59.25.jpeg" alt="drawing" width="400"/>
+
+__Problem:__ Optisch sind die Risse, vor allem der im Schlafzimmer deutlich sichtbar. Die Risse tauchen kurz nach der Renovierung auf.
+
+Der Lösungsvorschlag nach auftauchen der Mängel seitens der Werksfirma war hier, dünne Wände mit Malervlies zu versehen um so der Bildung von Haarrissen vorzubeugen. Aufgrund der vielzahl an sonstigen Mängeln herrscht Unsicherheit, inwiefern es sich dabei um eine gute Lösung handelt. Zudem wissen wir nicht, ob die Risse unterhalb des neuen Putzes ordnugnsgemäß verschlossen wurden.
