@@ -8,6 +8,7 @@
 - [Wohnzimmer](#wohnzimmer)
 - [Badezimmer groß](#badezimmer-groß)
 - [Arbeitszimmer](#arbeitszimmer)
+- [Haarrisse](#haarrisse)
 
 
 ### Details
@@ -347,7 +348,9 @@ __Problem:__ Flecken an der Wand im Arbeitszimmer. Vermutlich von der Beize.
 
 __Erwartung:__ Keine Flecken an der Wand. Gern Farbe für die Eigentümer da lassen.
 
-## Haarrisse in den Wänden
+<div id='Flur' />
+
+## Haarrisse
 
 In der 1. Juli Woche wurden Haar- und Setzrisse in den Wänden bemerkt. Betroffene Stellen:
 

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>maengel.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="m%C3%A4ngelliste">Mängelliste</h1>
+<h3 id="inhalt">Inhalt</h3>
+<ul>
+<li><a href="#Flur">Flur</a></li>
+<li><a href="#K%C3%BCche">Küche</a></li>
+<li><a href="#Schlafzimmer">Schlafzimmer</a></li>
+<li><a href="#wohnzimmer">Wohnzimmer</a></li>
+<li><a href="#badezimmer-gro%C3%9F">Badezimmer groß</a></li>
+<li><a href="#arbeitszimmer">Arbeitszimmer</a></li>
+<li><a href="#haarrisse">Haarrisse</a></li>
+</ul>
+<h3 id="details">Details</h3>
+<p>Die <strong>geplante Fertigstellung war der 01.06.</strong>, dieser Termin konnte von der Werksfirma nicht eingehalten werden, sodass eine Abnahme erst am 13.06. möglich wurde. Zu diesem Termin waren die Arbeiten in der Wohnung immernoch nicht abgeschlossen, daher erfolgte auch hier keine Abnahme. Der Einzug in die Wohnung erfolgte am 20.06., allerdings ohne Abnahme, da die Wohnung auch hier noch nicht fertig war. Am 19.06. und 20.06. wurden erste Mängel bemerkt und protokolliert. Das Auftauchen dieser Mängel durch den Umzug, ist daher ausgeschlossen.</p>
+<p>Aktuell wird die Wohnung seit dem 20.06. bewohnt.</p>
+<h3 id="bemerkung-zu-den-b%C3%B6den">Bemerkung zu den Böden</h3>
+<p>Die Arbeit an den Böden wurde auf Anfrage der Eigentümer gestoppt.
+In Schlafzimmer und Arbeitszimmer galten die Arbeiten als abgeschlossen, jedoch ist der Schliff hier weiterhin sehr rau und es zeigen sich Farbrückstände der vorherigen Schichten.
+Im Flur sind die Böden ebenfalls rau geschliffen, allerdings ohne Lackierung, da diese zum Autragsstopp nicht abgeschlossen war.
+Das Wohnzimmer wurde noch nicht bearbeitet.</p>
+<div id='Flur' />
+<h2 id="flur">Flur</h2>
+<video width="320" height="240" controls>
+  <source src="./Flur/WhatsApp%20Video%202025-06-20%20at%2011.55.35.mp4" type="video/mp4">
+</video>
+<p><strong>Problem</strong>: Das Licht im Flur flackert manchmal nach dem Anschalten. Es bleibt dann am Flackern und schaltet sich nicht richtig an.</p>
+<p><strong>Erwartung:</strong> Das Licht flakert beim Anschalten nicht mehr.</p>
+<p><strong>Update</strong>: Das Problem wurde durch ein neues Relais gelöst.</p>
+<img src="./Flur/WhatsApp Image 2025-06-22 at 13.49.07.jpeg" alt="drawing" width="400" height="500"/>
+<p><strong>Problem:</strong> Flecken an der Wand.</p>
+<p><strong>Erwartung:</strong> Übermalen der Flecken.</p>
+<img src="./Flur/WhatsApp Image 2025-06-22 at 13.49.13.jpeg" alt="drawing" width="400" height="500"/>
+<p><strong>Problem:</strong> Flecken an der Wand.</p>
+<p><strong>Erwartung:</strong> Übermalen der Flecken.</p>
+<img src="./Flur/WhatsApp Image 2025-06-22 at 13.49.44.jpeg" alt="drawing" width="400" height="500"/>
+<p><strong>Problem:</strong> Farbe bröckelt bereits ab.</p>
+<p><strong>Erwartung:</strong> Behebung der abbröckelnden Stellen.</p>
+<h3 id="weitere-flecken-im-flur">Weitere Flecken im Flur</h3>
+<p>Im folgenden weitere Flecken und nötige Nachbesserungen im Flur.</p>
+<img src="./Flur/WhatsApp Image 2025-06-22 at 13.49.56.jpeg" alt="drawing" width="400" height="500"/>
+<video width="320" height="240" controls>
+  <source src="./Flur/WhatsApp Video 2025-06-22 at 13.50.48.mp4" type="video/mp4">
+</video>
+<video width="320" height="240" controls>
+  <source src="./Flur/WhatsApp Video 2025-06-22 at 13.51.03.mp4" type="video/mp4">
+</video>
+<img src="./Flur/WhatsApp Image 2025-06-22 at 13.51.28.jpeg" alt="drawing" width="400" height="500"/>
+<img src="./Flur/WhatsApp Image 2025-06-22 at 13.51.44.jpeg" alt="drawing" width="400" height="500"/>
+<img src="./Flur/WhatsApp Image 2025-06-22 at 13.51.58.jpeg" alt="drawing" width="400" height="500"/>
+<video width="320" height="240" controls>
+  <source src="./Flur/WhatsApp Video 2025-06-22 at 13.52.22.mp4" type="video/mp4">
+</video>
+<video width="320" height="240" controls>
+  <source src="./Flur/WhatsApp Video 2025-06-22 at 13.53.26.mp4" type="video/mp4">
+</video>
+<video width="320" height="240" controls>
+  <source src="./Flur/WhatsApp Video 2025-06-22 at 13.53.44.mp4" type="video/mp4">
+</video>
+<img src="./Flur/WhatsApp Image 2025-06-22 at 13.53.46.jpeg" alt="drawing" width="400" height="500"/>
+<div id='Küche' />
+<h2 id="k%C3%BCche">Küche</h2>
+<img src="./Küche/WhatsApp Image 2025-06-20 at 11.31.49.jpeg" alt="drawing" width="400" height="500"/>
+<p><strong>Problem:</strong>  Der im Bild gezeigte Wandteil in der Küche ist nicht sauber gestrichen.</p>
+<p><strong>Erwartung:</strong> Eine Ebene Fläche, auf der die Farbe sauber auf die Wand aufgetragen ist.</p>
+<img src="./Küche/WhatsApp Image 2025-06-20 at 11.31.52.jpeg" alt="drawing" width="400" height="500"/>
+<p><strong>Problem:</strong> Wandteil in der Ecke ist nicht sauber gestrichen. Es komme dunkle Flecken zum vorschein.</p>
+<p><strong>Erwartung:</strong> Keine dunklen Flecken in der Ecke.</p>
+<img src="./Küche/WhatsApp Image 2025-06-20 at 11.32.13.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsaubere Stellen an der Fußleiste.</p>
+<p><strong>Erwartung:</strong> Dunkle Flecken in der Fußleiste sind entfernt. Relativ gleichmäißge Farbverteilung.</p>
+<img src="./Küche/WhatsApp Image 2025-06-20 at 11.32.35.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsauber verputzt hinter den Rohren und am Heizkörper. Die Wand ist hier sehr uneben.</p>
+<p><strong>Erwartung:</strong> Sauber verputzter Bereich um den Heizkörper und die Rohre.</p>
+<img src="./Küche/WhatsApp Image 2025-06-20 at 11.33.02.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Fußleiste ist nicht vollständig gestrichen.</p>
+<p><strong>Erwartung:</strong> Fußleiste ist vollständig gestrichen. Allerdings steht hier bereits die Küche vor der Fußleiste, da wir am 20.06. in die Wohnung ziehen mussten.</p>
+<p><strong>Update:</strong> Kann nicht behoben wurden, da mit dem Einzug sich diese Stellen hinter der Küchenzeile befinden.</p>
+<video width="320" height="240" controls>
+  <source src="./Küche/WhatsApp Video 2025-06-20 at 11.34.43.mp4" type="video/mp4">
+</video>
+<p><strong>Problem:</strong> Unsaubere Stellen unterhalb der Fliesen. Die Wand scheint ist hier sehr rau.</p>
+<p><strong>Erwartung:</strong> Saubere Wandstellen, an denen der Putz oder die Farbschichten gleichmäßig aufgetragen ist. Dieser Bereich ist bereits durch den Einzug durch eine Küchenzeile verdeckt.</p>
+<p><strong>Update:</strong> Wird zum Teil behoben werden, ein Teil ist jedoch ebenfalls durch die Küchenzeile verdeckt.</p>
+<video width="320" height="240" controls>
+  <source src="./Küche/WhatsApp Video 2025-06-20 at 11.39.04.mp4" type="video/mp4">
+</video>
+<p><strong>Problem:</strong> Die Steckdosen funktionieren nicht. Sie wurden mehrfach durch die Wohnungseigentümer vertestet. Die Behebung erfolgte durch den Eigentümer, eine Steckdose war nicht richtig angeklemmt.</p>
+<p><strong>Erwartung:</strong> Funktionierende Steckdosen.</p>
+<img src="./Küche/WhatsApp Image 2025-06-22 at 13.03.15.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Teile der alten Tapete finden sich noch unter den Heizkörpern. Eine Entfernung der alten Tapeten hinter den Heizkörpern wurde nicht vereinbart. Hier zeigt sich die Tapete jedoch noch unterhalb der Heizung.</p>
+<p><strong>Erwartung:</strong> Tapete soll von außen nicht mehr zu sehen sein.</p>
+<div id='Schlafzimmer' />
+<h2 id="schlafzimmer">Schlafzimmer</h2>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-20 at 11.14.16.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsaubere stellen an der Wand.</p>
+<p><strong>Erwartung:</strong> Die Stellen sind gleichmäßig und sauber gearbeitet. An der Wand zeigt sich kein offener Putz. Die Farbschcihten sind zudem relativ gleichmäßig verteilt.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-20 at 11.14.22.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Nicht bemalte Wandflächen hinter den Rohren.</p>
+<p><strong>Erwartung:</strong> Gleichmäßig aufgetragene Farbschichten.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-20 at 11.15.08.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsauber berabeiteter Boden mit Farbrückständen aus den vorherigen Schichten.</p>
+<p><strong>Erwartung:</strong> Sauber bearbeitete Diele in denen vorherigen Farbschichten nicht mehr sichtbar sind.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-20 at 11.15.12.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsauber berabeiteter Boden mit Farbrückständen aus den vorherigen Schichten.</p>
+<p><strong>Erwartung:</strong> Sauber bearbeitete Diele in denen vorherigen Farbschichten nicht mehr sichtbar sind.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-20 at 11.15.45.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsauber berabeiteter Boden mit Farbrückständen aus den vorherigen Schichten.</p>
+<p><strong>Erwartung:</strong> Sauber bearbeitete Diele in denen vorherigen Farbschichten nicht mehr sichtbar sind.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-20 at 11.30.02.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong>  Nicht gleichmäßig aufgetragene Farbschichten.</p>
+<p><strong>Erwartung:</strong>  Farbschichten sind gleichmäßig verteilt.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-22 at 11.27.31.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Offene Stellen in den Wänden.</p>
+<p><strong>Erwartung:</strong> Offene Stellen sind ordentlich verschlossen.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-22 at 11.27.47.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Dunkle Stellen in den Ecken.</p>
+<p><strong>Erwartung:</strong> In den Ecken finden sich keine dunklen Stellen, die Farbschichten sind hier sauber verteilt.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-22 at 11.28.31.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsauber aufgetragene Farbe und Putz neben den Rohren.</p>
+<p><strong>Erwartung:</strong> Saubere Bearbeitung der Bereiche um die Rohre mit Putz und Farbe.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-22 at 11.29.01.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Putz an der Ecke und Übergang zu den Leisten scheint unsauber.</p>
+<p><strong>Erwartung:</strong> Sauberer Übergang zu Wand und Leiste, sowie Ecke und Fußleiste.</p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-06-22 at 11.29.33.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsaubere Putzstellen hinter und um den Rohren.</p>
+<p><strong>Erwartung:</strong> Saubere Bearbeitung der Stellen hinter und um den Rohren. Der Rohrbereich ist generell schwerer zu bearbeiten. In unserer Mietwohnung waren die Stellen jedoch deutlich sauberer.</p>
+<video width="320" height="240" controls>
+  <source src="./Schlafzimmer/WhatsApp Video 2025-06-22 at 14.08.45.mp4" type="video/mp4">
+</video>
+<p><strong>Problem:</strong> kleinere Flecken hinter der Tür.</p>
+<p><strong>Erwartung:</strong> Ausbesserung der Flecken.</p>
+<div id='Wohzimmer' />
+<h2 id="wohnzimmer">Wohnzimmer</h2>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.17.48.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsauber verputzte Ecke.</p>
+<p><strong>Erwartung:</strong> Gleichmäßiger Farbauftrag, sowie sauber verputzte Ecke.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.18.32.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Farbe nicht vollständig aufgetragen an der Heizung.</p>
+<p><strong>Erwartung:</strong> Kein durchschimmern von nicht gewollter Farbe.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.19.14.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Farbe nicht vollständig aufgetragen neben der Heizung.</p>
+<p><strong>Erwartung:</strong> Vollständig aufgetragene Farbe.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.19.35.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Farbe nicht vollständig aufgetragen.</p>
+<p><strong>Erwartung:</strong> Stelle an der Wand ist vollständig mit weißer Farbe bedeckt.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.19.57.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unsauber verputzte Ecke.</p>
+<p><strong>Erwartung:</strong> Gleichmäßiger Farbauftrag, sowie sauber verputzte Ecke.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.22.34.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Ungleichmäßiger Farbstrich.</p>
+<p><strong>Erwartung:</strong> Farbstrich ist ähnlich an Stellen wo möglich.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.23.01.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unvollständiger Anstrich im Rohrbereich.</p>
+<p><strong>Erwartung:</strong> Stelle an der Wand ist vollständig mit weißer Farbe bedeckt.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.25.10.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Unvollständig verputzte Ecke.</p>
+<p><strong>Erwartung:</strong> Ecke schließt ist sauber verputzt und zeigt keine unsauberen Stellen.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.26.14.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Eckbereich ist nicht sauber bearabeitet. Farbauftrag sehr grob.</p>
+<p><strong>Erwartung:</strong> Gleichmäßiger Farbauftrag.</p>
+<img src="./Wohnzimmer/WhatsApp Image 2025-06-20 at 11.26.19.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Bereiche hinter den Rohren sind nicht sauber bearbeitet, teilweise fehlt Farbe.</p>
+<p><strong>Erwartung:</strong> Vollständiger Farbauftrag an den offenen Stellen.</p>
+<div id='Badezimmer groß' />
+<h2 id="badezimmer-gro%C3%9F">Badezimmer groß</h2>
+<img src="./Badezimmer groß/WhatsApp Image 2025-06-22 at 12.11.16.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Farbe findet sich in der Toilette. Die Toiellete ist hier schwer zu reinigen. Mit der Toilettenbürste konnte ich die Farbe bis jetzt nicht entfernen.</p>
+<p><strong>Erwartung:</strong> Die Toilette findet sich so vor, wie wir sie vor den Arbeiten verlassen haben.</p>
+<p><strong>Strom</strong></p>
+<p>Im Badezimmer funktionierten 2 Steckdosen nicht richtig. Neben dem Vorbau an der linken Wand, gibt es insgesamt 3 Steckdosen. Eine im unteren Bereich und zwei im oberen, siehe Bild. Beim Nutzen der oberen Steckdosen und der unteren, schaltete sich der Strom für die Steckdosen komplett ab. Eine Nutzung wie auf dem Bild gezeigt, war vor der Behebung am 21.06. nicht möglich.</p>
+<img src="./Badezimmer groß/c5ef2c8a-7420-4bf7-862f-983b186c4199.jpeg" alt="drawing" width="400"/>
+<div id='Arbeitszimmer' />
+<h2 id="arbeitszimmer">Arbeitszimmer</h2>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-06-22 at 12.11.35.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Rückstände von Beize auf der Türschwelle. Das Malerfließ klebt an dieser Stelle, daher vermuten wir, dass es sich hierbei um Beize handelt. Wir haben Angst, dass hier weiterhin das Holz angegriffen wird.</p>
+<p><strong>Erwartung:</strong> Beize ist an entsprechender Stelle entfernt.</p>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-06-22 at 13.45.15.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Offene Stelle an der Diele.</p>
+<p><strong>Erwartung:</strong> Füllung für die Stelle oder Übergang zur Türschwelle.</p>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-06-22 at 13.45.23.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Hier wurde nach Absprache ein Übergang zur Türschwelle des Balkon vereinbart. Dieser fehlt aktuell.</p>
+<p><strong>Erwartung:</strong> Übergang zum Balkon, ordentliche Schwelle.</p>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-06-22 at 13.48.40.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Flecken an der Wand im Arbeitszimmer. Vermutlich von der Beize.</p>
+<p><strong>Erwartung:</strong> Keine Flecken an der Wand. Gern Farbe für die Eigentümer da lassen.</p>
+<img src="./Arbeitszimmer/1b4805f4-841c-44ad-ae46-e495a4f5d8e7.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Flecken an der Wand im Arbeitszimmer. Vermutlich von der Beize.</p>
+<p><strong>Erwartung:</strong> Keine Flecken an der Wand. Gern Farbe für die Eigentümer da lassen.</p>
+<div id='Flur' />
+<h2 id="haarrisse">Haarrisse</h2>
+<p>In der 1. Juli Woche wurden Haar- und Setzrisse in den Wänden bemerkt. Betroffene Stellen:</p>
+<p><strong>Schlafzimmer</strong></p>
+<img src="./Schlafzimmer/WhatsApp Image 2025-07-05 at 12.59.25.jpeg" alt="drawing" width="400"/>
+<p><strong>Arbeitszimmer</strong></p>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-07-05 at 12.59.25 (1).jpeg" alt="drawing" width="400"/>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-07-05 at 12.59.25 (2).jpeg" alt="drawing" width="400"/>
+<img src="./Arbeitszimmer/WhatsApp Image 2025-07-05 at 12.59.25.jpeg" alt="drawing" width="400"/>
+<p><strong>Problem:</strong> Optisch sind die Risse, vor allem der im Schlafzimmer deutlich sichtbar. Die Risse tauchen kurz nach der Renovierung auf.</p>
+<p>Der Lösungsvorschlag nach auftauchen der Mängel seitens der Werksfirma war hier, dünne Wände mit Malervlies zu versehen um so der Bildung von Haarrissen vorzubeugen. Aufgrund der vielzahl an sonstigen Mängeln herrscht Unsicherheit, inwiefern es sich dabei um eine gute Lösung handelt. Zudem wissen wir nicht, ob die Risse unterhalb des neuen Putzes ordnugnsgemäß verschlossen wurden.</p>
+
+</body>
+</html>
